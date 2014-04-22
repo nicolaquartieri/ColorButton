@@ -9,6 +9,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 
 import com.example.colorbutton.fft.FFT;
 
@@ -16,6 +18,7 @@ public class MainActivity extends Activity {
 
 	private Button b = null;	
 	private ColorTask ct = null;
+	private SeekBar sb = null;	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +28,29 @@ public class MainActivity extends Activity {
 		b = (Button) findViewById(R.id.Button01);
 		b.setBackgroundColor(Color.RED);
 		
+		sb = (SeekBar) findViewById(R.id.seekBar);
+		sb.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+			
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+			}
+			
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+				b.setBackgroundColor(Color.rgb(progress, 0, 0));
+			}
+		});
+		
 		ct = new ColorTask(MainActivity.this);
-		ct.execute();
+		// TODO 
+//		ct.execute();
 	}
 
 	private void changeButtonColor(Integer c) {

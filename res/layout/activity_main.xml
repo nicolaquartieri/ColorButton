@@ -51,4 +51,13 @@
         android:layout_above="@+id/Button06"
         android:layout_toLeftOf="@+id/Button04" />
 
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:progress="0"
+        android:max="255"
+        android:layout_alignParentLeft="true" />
+
 </RelativeLayout>
