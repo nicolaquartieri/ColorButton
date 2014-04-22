@@ -137,7 +137,7 @@ public class MainActivity extends Activity {
         	
         	mActivity.changeButtonColor(Color.rgb(c, 0, 0));
         	
-        	Log.i("INFO", "TODO " + c++ + " " + c);
+        	//Log.i("INFO", "TODO " + c++ + " " + c);
         }
 
 		@Override
@@ -186,9 +186,12 @@ public class MainActivity extends Activity {
 																				// this
 																				// frequency?
 						// Frecuencia
+//						Log.i("INFO", Math.round(freq) + " Hz");
 //						text(Math.round(freq) + " Hz", 10, y); // add text label
 					}
 
+					Log.i("INFO", "Amp: " + fft.getFreq(299));
+					
 					float lastVal = 0;
 					float val = 0;
 					float maxVal = 0; // index of the bin with highest value
@@ -215,6 +218,11 @@ public class MainActivity extends Activity {
 					if (maxValIndex - drawStepW > 0) {
 //						text(" " + fft.indexToFreq(maxValIndex - drawStepW / 2) + "Hz", 25 + maxValIndex * drawScaleW, drawBaseLine - maxVal * drawScaleH);
 					}
+					
+//					Log.i("INFO", "buffer readed: " + bufferReadResult);
+//					Log.i("INFO", "fft spec size: " + fft.specSize());
+//					Log.i("INFO", "volume: " + volume);
+					
 //					text("buffer readed: " + bufferReadResult, 20, 80);
 //					text("fft spec size: " + fft.specSize(), 20, 100);
 //					text("volume: " + volume, 20, 120);
