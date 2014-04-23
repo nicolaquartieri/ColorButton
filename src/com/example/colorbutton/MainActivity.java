@@ -82,11 +82,9 @@ public class MainActivity extends Activity {
     	float[]     fftRealArray     = null;
     	int         mainFreq         = 0;
 
-    	float       drawScaleH       = 1.5f; // TODO: calculate the drawing scales
     	float       drawScaleW       = 1.0f; // TODO: calculate the drawing scales
     	int         drawStepW        = 2;   // display only every Nth freq value
     	float       maxFreqToDraw    = 2500; // max frequency to represent graphically
-    	int         drawBaseLine     = 0;
     	
         private MainActivity mActivity;
     	
@@ -159,11 +157,7 @@ public class MainActivity extends Activity {
     		mActivity = activity;
     	}    	    
     	
-    	int c = 0;
-    	
         protected void onProgressUpdate(Integer... values) {
-        	int v = 1 + (int)(Math.sin(c) * ((255 - 1) + 1));
-        	
         	mActivity.changeButton01Color(Color.rgb((int) (fft.getFreq(149) * 10), 0, 0));
         	mActivity.changeButton02Color(Color.rgb(0, (int) (fft.getFreq(299) * 10), 0));
         	mActivity.changeButton03Color(Color.rgb(0, 0, (int) (fft.getFreq(459) * 10)));
