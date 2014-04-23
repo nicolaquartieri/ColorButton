@@ -167,9 +167,9 @@ public class MainActivity extends Activity {
         	mActivity.changeButton01Color(Color.rgb((int) (fft.getFreq(149) * 10), 0, 0));
         	mActivity.changeButton02Color(Color.rgb(0, (int) (fft.getFreq(299) * 10), 0));
         	mActivity.changeButton03Color(Color.rgb(0, 0, (int) (fft.getFreq(459) * 10)));
-        	mActivity.changeButton04Color(Color.rgb((int) (fft.getFreq(299) * 10), (int) (fft.getFreq(599) * 10), 0));
-        	mActivity.changeButton05Color(Color.rgb((int) (fft.getFreq(299) * 10), 0, (int) (fft.getFreq(749) * 10)));
-        	mActivity.changeButton06Color(Color.rgb(0, (int) (fft.getFreq(299) * 10), (int) (fft.getFreq(899) * 10)));
+        	mActivity.changeButton04Color(Color.rgb((int) (fft.getFreq(599) * 10), (int) (fft.getFreq(599) * 10), 0));
+        	mActivity.changeButton05Color(Color.rgb((int) (fft.getFreq(749) * 10), 0, (int) (fft.getFreq(749) * 10)));
+        	mActivity.changeButton06Color(Color.rgb(0, (int) (fft.getFreq(899) * 10), (int) (fft.getFreq(899) * 10)));
 
         	//Log.i("INFO", "TODO " + c++ + " " + c);
         }
