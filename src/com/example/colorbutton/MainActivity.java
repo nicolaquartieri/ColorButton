@@ -14,7 +14,13 @@ import com.example.colorbutton.fft.FFT;
 
 public class MainActivity extends Activity {
 
-	private Button b = null;	
+	private Button b1 = null;
+	private Button b2 = null;
+	private Button b3 = null;
+	private Button b4 = null;
+	private Button b5 = null;
+	private Button b6 = null;
+	
 	private ColorTask ct = null;
 	
 	@Override
@@ -22,16 +28,39 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		b = (Button) findViewById(R.id.Button01);
-		b.setBackgroundColor(Color.RED);
+		b1 = (Button) findViewById(R.id.Button01);
+		b2 = (Button) findViewById(R.id.button02);
+		b3 = (Button) findViewById(R.id.Button03);
+		b4 = (Button) findViewById(R.id.Button04);
+		b5 = (Button) findViewById(R.id.Button05);
+		b6 = (Button) findViewById(R.id.Button06);
 		
 		ct = new ColorTask(MainActivity.this);
 		ct.execute();
 	}
 
-	private void changeButtonColor(Integer c) {
-		if (b != null)
-			b.setBackgroundColor(c);
+	private void changeButton01Color(Integer c) {
+		b1.setBackgroundColor(c);
+	}
+	
+	private void changeButton02Color(Integer c) {
+		b2.setBackgroundColor(c);
+	}
+	
+	private void changeButton03Color(Integer c) {
+		b3.setBackgroundColor(c);
+	}
+	
+	private void changeButton04Color(Integer c) {
+		b4.setBackgroundColor(c);
+	}
+	
+	private void changeButton05Color(Integer c) {
+		b5.setBackgroundColor(c);
+	}
+	
+	private void changeButton06Color(Integer c) {
+		b6.setBackgroundColor(c);
 	}
 	
 	// AsyncTask
@@ -135,7 +164,12 @@ public class MainActivity extends Activity {
         protected void onProgressUpdate(Integer... values) {
         	int v = 1 + (int)(Math.sin(c) * ((255 - 1) + 1));
         	
-        	mActivity.changeButtonColor(Color.rgb((int) (fft.getFreq(299) * 10), 0, 0));
+        	mActivity.changeButton01Color(Color.rgb((int) (fft.getFreq(149) * 10), 0, 0));
+        	mActivity.changeButton02Color(Color.rgb(0, (int) (fft.getFreq(299) * 10), 0));
+        	mActivity.changeButton03Color(Color.rgb(0, 0, (int) (fft.getFreq(459) * 10)));
+        	mActivity.changeButton04Color(Color.rgb((int) (fft.getFreq(299) * 10), (int) (fft.getFreq(599) * 10), 0));
+        	mActivity.changeButton05Color(Color.rgb((int) (fft.getFreq(299) * 10), 0, (int) (fft.getFreq(749) * 10)));
+        	mActivity.changeButton06Color(Color.rgb(0, (int) (fft.getFreq(299) * 10), (int) (fft.getFreq(899) * 10)));
 
         	//Log.i("INFO", "TODO " + c++ + " " + c);
         }
