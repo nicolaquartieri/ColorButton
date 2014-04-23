@@ -135,8 +135,8 @@ public class MainActivity extends Activity {
         protected void onProgressUpdate(Integer... values) {
         	int v = 1 + (int)(Math.sin(c) * ((255 - 1) + 1));
         	
-        	mActivity.changeButtonColor(Color.rgb(c, 0, 0));
-        	
+        	mActivity.changeButtonColor(Color.rgb((int) (fft.getFreq(299) * 10), 0, 0));
+
         	//Log.i("INFO", "TODO " + c++ + " " + c);
         }
 
@@ -191,6 +191,7 @@ public class MainActivity extends Activity {
 					}
 
 					Log.i("INFO", "Amp: " + fft.getFreq(299));
+					publishProgress();
 					
 					float lastVal = 0;
 					float val = 0;
@@ -233,8 +234,6 @@ public class MainActivity extends Activity {
 //				text("sample rate: " + RECORDER_SAMPLERATE + " Hz", 20, 80);
 //				text("displaying freq: 0 Hz  to  " + maxFreqToDraw + " Hz", 20,	100);
 //				text("buffer size: " + bufferSize, 20, 120);
-				
-				publishProgress();
 				
 				try {
 					Thread.sleep(60);
