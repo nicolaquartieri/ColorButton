@@ -1,7 +1,7 @@
 ColorButton
 ===========
 
-Android Color Button Component
+Android Studio Color Button
 
 Version
 -
