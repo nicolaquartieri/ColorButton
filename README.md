@@ -1,12 +1,12 @@
 ColorButton
 ===========
 
-Android Color Button Component
+Android Studio Color Button
 
 Version
 -
 
-0,8
+0.8
 
 License
 -

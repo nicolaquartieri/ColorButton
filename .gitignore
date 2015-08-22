@@ -1,3 +1,16 @@
-.classpath
-bin/
-gen/
+# Gradle files
+.gradle/
+build/
+
+# Android Studio files
+local.properties
+*.iml
+.idea/
+
+# Mac OS X clutter
+*.DS_Store
+
+# Windows clutter
+Thumbs.db
+seeds.txt
+unused.txt
